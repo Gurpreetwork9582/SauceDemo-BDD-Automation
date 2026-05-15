@@ -11,20 +11,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class TestAddingitem():
-  def setup_method(self, method):
-    self.driver = webdriver.Firefox()
-    self.vars = {}
-  
-  def teardown_method(self, method):
-    self.driver.quit()
-  
-  def test_addingitem(self):
-    self.driver.get("https://www.saucedemo.com/inventory.html")
-    self.driver.set_window_size(1192, 765)
-    self.driver.find_element(By.CSS_SELECTOR, "*[data-test=\"inventory-item-sauce-labs-backpack-img\"]").click()
-    self.driver.find_element(By.CSS_SELECTOR, "*[data-test=\"add-to-cart\"]").click()
-    self.driver.find_element(By.CSS_SELECTOR, "*[data-test=\"shopping-cart-link\"]").click()
-    assert self.driver.find_element(By.CSS_SELECTOR, "*[data-test=\"inventory-item\"]").text == "Sauce Labs Backpack"
-    self.driver.find_element(By.ID, "react-burger-menu-btn").click()
-    self.driver.find_element(By.CSS_SELECTOR, "*[data-test=\"inventory-sidebar-link\"]").click()
+  def test_addingitem(self,browser_open):
+    self.browser_open = browser_open
+    self.browser_open.find_element(By.CSS_SELECTOR, "*[data-test=\"inventory-item-sauce-labs-backpack-img\"]").click()
+    self.browser_open.find_element(By.CSS_SELECTOR, "*[data-test=\"add-to-cart\"]").click()
+    self.browser_open.find_element(By.CSS_SELECTOR, "*[data-test=\"shopping-cart-link\"]").click()
+    assert self.browser_open.find_element(By.CSS_SELECTOR, "*[data-test=\"inventory-item\"]").text == "Sauce Labs Backpack"
+    self.drbrowser_openiver.find_element(By.ID, "react-burger-menu-btn").click()
+    self.browser_open.find_element(By.CSS_SELECTOR, "*[data-test=\"inventory-sidebar-link\"]").click()
   
