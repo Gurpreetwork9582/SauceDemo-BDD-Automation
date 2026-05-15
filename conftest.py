@@ -22,8 +22,19 @@ def browser_open(base_url,login):
     login()
     yield browser
     browser.quit()
+'''
+@pytest.fixture(scope="session", autouse=True)
+def login(browser):
+    auth = login_auth(browser)
+    auth.login()
+    return browser
+
+@pytest.fixture(scope="session")
+def browser():
+    driver = webdriver.Chrome()
+    driver.implicitly_wait(10)
+    yield driver
+    driver.quit()
 
 
-
-
-
+'''
