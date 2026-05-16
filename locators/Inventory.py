@@ -1,0 +1,7 @@
+INVENTORY_ITEMS        = (By.CLASS_NAME, "inventory_item")
+ITEM_NAME              = (By.CLASS_NAME, "inventory_item_name")
+ITEM_PRICE             = (By.CLASS_NAME, "inventory_item_price")
+ADD_TO_CART_BTN        = (By.XPATH, "//button[text()='Add to cart']")
+REMOVE_BTN             = (By.XPATH, "//button[text()='Remove']")
+CART_BADGE             = (By.CLASS_NAME, "shopping_cart_badge")
+CART_ICON              = (By.CLASS_NAME, "shopping_cart_link")
