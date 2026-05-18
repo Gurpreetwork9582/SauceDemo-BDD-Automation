@@ -1,22 +1,34 @@
 from selenium import webdriver
 import pytest
 from Login_auth import login_auth
+import os
 
 
 @pytest.fixture(scope="session")
 def browser():
-    browser = webdriver.Chrome()
-    yield browser
-    browser.quit()
+    driver = webdriver.Chrome()
+    yield driver
+    driver.quit()
     
     
 @pytest.fixture(scope="session")
 def login(browser):
     browser_login = login_auth(browser)
-    browser_login.login()
-    browser_login.save_cookie()
-    browser_login.load_cookie()   
-    
+    if os.path.exists("cookies.pkl"):
+        try:
+            browser_login.load_cookie()
+        except Exception:
+            # If cookie loading fails, delete and perform login
+            os.remove("cookies.pkl")
+            browser_login.login()
+            browser_login.save_cookie()
+    else:
+        browser_login.login()
+        browser_login.save_cookie()
+         
+         
+    yield browser
+     
     
     
 '''
