@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.remote.webdriver import WebDriver
 import pytest
 from Login_auth import login_auth
 import os
@@ -12,7 +13,7 @@ def browser():
     
     
 @pytest.fixture(scope="session")
-def login(browser):
+def login(browser:WebDriver):
     browser_login = login_auth(browser)
     if os.path.exists("cookies.pkl"):
         try:
