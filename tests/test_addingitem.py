@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from locators import Locators
 
 
 class TestAddingitem:
@@ -10,17 +11,17 @@ class TestAddingitem:
 
         add_btn = wait.until(
             EC.element_to_be_clickable(
-                (By.CSS_SELECTOR, '[data-test="add-to-cart-sauce-labs-backpack"]')
+                (By.CSS_SELECTOR, Locators.ADD_BACKPACK)
             )
         )
         add_btn.click()
         
-        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,'[data-test="remove-sauce-labs-backpack"]')))
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, Locators.REMOVE_BACKPACK)))
         
 
         cart_link = wait.until(
             EC.element_to_be_clickable(
-                (By.CSS_SELECTOR, '[data-test="shopping-cart-link"]')
+                (By.CSS_SELECTOR, Locators.CART_ICON)
             )
         )
         cart_link.click()

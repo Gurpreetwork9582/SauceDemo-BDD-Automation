@@ -1,7 +1,0 @@
-INVENTORY_ITEMS        = "inventory_item"
-ITEM_NAME              = "inventory_item_name"
-ITEM_PRICE             = "inventory_item_price"
-ADD_TO_CART_BTN        = "//button[text()='Add to cart']"
-REMOVE_BTN             = "//button[text()='Remove']"
-CART_BADGE             = "shopping_cart_badge"
-CART_ICON              = "shopping_cart_link"
