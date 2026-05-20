@@ -22,21 +22,21 @@ BACKPACK                ="[data-test='item-4-title-link']"
 ADD_BACKPACK            ="[data-test='add-to-cart-sauce-labs-backpack']"
 REMOVE_BACKPACK         = "[data-test='remove-sauce-labs-backpack']"
 
-JACKET                  ="[data-test='item-5-title-link']"
-ADD_JACKET              ="[data-test='add-to-cart-sauce-labs-fleece-jacket']"
-REMOVE_JACKET           ="[data-test='remove-sauce-labs-fleece-jacket']"
+JACKET                  = "[data-test='item-5-title-link']"
+ADD_JACKET              = "[data-test='add-to-cart-sauce-labs-fleece-jacket']"
+REMOVE_JACKET           = "[data-test='remove-sauce-labs-fleece-jacket']"
 
 #SIDE BAR
-MENU_HAMBURGER_BTN       ="react-burger-menu-btn"
-MENU_ALL_ITEMS          ="[data-test='inventory-sidebar-link']"
-MENU_ABOUT              ="[data-test='about-sidebar-link']"
-MENU_LOGOUT             ="[data-test='logout-sidebar-link']"
-MENU_CANCEL_BTN         ="react-burger-cross-btn"
+MENU_HAMBURGER_BTN      = "react-burger-menu-btn"
+MENU_ALL_ITEMS          = "[data-test='inventory-sidebar-link']"
+MENU_ABOUT              = "[data-test='about-sidebar-link']"
+MENU_LOGOUT             = "[data-test='logout-sidebar-link']"
+MENU_CANCEL_BTN         = "react-burger-cross-btn"
 
 #CART
 CART_ICON              = "[data-test='shopping-cart-link']"
-CONTINUE_SHOPPING_BTN  ="[data-test='continue-shopping']"
-CHECKOUT_BTN           ="[data-test='checkout']"
+CONTINUE_SHOPPING_BTN  = "[data-test='continue-shopping']"
+CHECKOUT_BTN           = "[data-test='checkout']"
 
 #CHECKOUT
 CHECKOUT_FIRSTNAME      ="[data-test='firstName']"
@@ -45,4 +45,4 @@ CHECKOUT_ZIP            ="[data-test='postalCode']"
 CHECKOUT_CONTINUE       ="[data-test='continue']"
 
 
-CART_BADGE             = "[data-test=shopping-cart-badge']"
+CART_BADGE             = "[data-test='shopping-cart-badge']"

@@ -3,9 +3,11 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
+import pytest
 
 
 class TestAddingitem:
+    @pytest.mark.order(1)
     def test_addingitem(self, login:WebDriver):
         wait = WebDriverWait(login, 10)
 
@@ -31,12 +33,5 @@ class TestAddingitem:
         ).text
         assert item_name == "Sauce Labs Backpack"
 
-        menu_btn = wait.until(
-            EC.element_to_be_clickable((By.ID, "react-burger-menu-btn"))
-        )
-        menu_btn.click()
 
-        inv_link = wait.until(
-            EC.element_to_be_clickable((By.ID, "inventory_sidebar_link"))
-        )
-        inv_link.click()
+        
