@@ -16,11 +16,15 @@ def browser():
 @pytest.fixture(scope="session")
 def login(browser:WebDriver):
     browser_login = login_auth(browser)
+    browser.get("https://www.saucedemo.com/")
+
     if os.path.exists("cookies.pkl"):
         try:
             browser_login.load_cookie()
+            if "inventory.html" not in browser.current_url:
+                browser_login.login()
+                browser_login.save_cookie()
         except Exception:
-            # If cookie loading fails, delete and perform login
             os.remove("cookies.pkl")
             browser_login.login()
             browser_login.save_cookie()

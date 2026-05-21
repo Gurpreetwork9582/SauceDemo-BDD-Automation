@@ -20,8 +20,11 @@ class login_auth:
             pickle.dump(self.browser.get_cookies(), file)
 
     def load_cookie(self):
+        self.browser.get("https://www.saucedemo.com/")
         with open("cookies.pkl","rb") as file:
-            cookies=pickle.load(file)
+            cookies = pickle.load(file)
 
         for cookie in cookies:
             self.browser.add_cookie(cookie)
+
+        self.browser.refresh()
