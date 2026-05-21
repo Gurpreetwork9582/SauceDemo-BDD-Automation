@@ -35,14 +35,23 @@ MENU_CANCEL_BTN         = "react-burger-cross-btn"
 
 #CART
 CART_ICON              = "[data-test='shopping-cart-link']"
+CART_ITEM              = ".cart_item"
 CONTINUE_SHOPPING_BTN  = "[data-test='continue-shopping']"
 CHECKOUT_BTN           = "[data-test='checkout']"
 
 #CHECKOUT
-CHECKOUT_FIRSTNAME      ="[data-test='firstName']"
-CHECKOUT_LASTNAME       ="[data-test='lastName']"
-CHECKOUT_ZIP            ="[data-test='postalCode']"
-CHECKOUT_CONTINUE       ="[data-test='continue']"
+CHECKOUT_FIRSTNAME      = "first-name"
+CHECKOUT_LASTNAME       = "last-name"
+CHECKOUT_ZIP            = "postal-code"
+CHECKOUT_CONTINUE       = "continue"
+
+#CONFIRMCHECKOUT
+CANCEL_BTN              = "#react-burger-cross-btn"
+FINISH_BTN              = "finish"
+
+#Confimation
+ORDER_CONFIRMATION      = "[data-test='complete-header']"
+BACK_TO_PRODUCTS        = "[data-test='back-to-products']"
 
 
 CART_BADGE             = "[data-test='shopping-cart-badge']"

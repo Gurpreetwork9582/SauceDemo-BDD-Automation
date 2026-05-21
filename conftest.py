@@ -3,6 +3,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 import pytest
 from Login_auth import login_auth
 import os
+from Logout_auth import logout_auth
 
 
 @pytest.fixture(scope="session")
@@ -30,6 +31,12 @@ def login(browser:WebDriver):
          
     yield browser
      
+@pytest.fixture(scope="session")    
+def logout(browser:WebDriver):
+    browser_logout=logout_auth(browser)
+    browser_logout.logout()
+    
+    
     
     
 '''

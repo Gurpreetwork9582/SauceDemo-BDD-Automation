@@ -1,9 +1,10 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webdriver import WebDriver
 import pickle
 
 
 class login_auth:
-    def __init__(self, browser):
+    def __init__(self, browser:WebDriver):
         self.browser = browser
 
     def login(self):
