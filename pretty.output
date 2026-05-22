@@ -1,0 +1,10 @@
+Feature: Checkout # features/checkout.feature:1
+
+  Scenario: Complete checkout with items in the cart                                                   # features/checkout.feature:2
+    Given I am logged in to SauceDemo                                                                  # features/steps/checkout_steps.py:9
+    And I have items in my cart                                                                        # features/steps/checkout_steps.py:27
+      ASSERT FAILED:
+
+    When I checkout with first name "Test_Firstname", last name "Test_lastname", and zip code "E1A353" # None
+    Then I should see the order confirmation "Thank you for your order!"                               # None
+
