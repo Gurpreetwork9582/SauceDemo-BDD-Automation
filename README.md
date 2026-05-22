@@ -3,9 +3,11 @@
 This project is a Selenium automation suite for [SauceDemo](https://www.saucedemo.com/). I built it to practice end-to-end UI testing with two styles:
 
 - Pytest + Selenium tests from the `tests/` folder
-/Users/guri/SauceDemo-BDD-Automation/docs/Pytest report.png
+<img width="1470" height="636" alt="Pytest report" src="https://github.com/user-attachments/assets/c6217565-fa10-4d83-b8f6-29c01bab185e" />
+
 - Behave BDD scenarios from the `features/` folder
-/Users/guri/SauceDemo-BDD-Automation/docs/Behave.png
+<img width="1170" height="176" alt="Behave" src="https://github.com/user-attachments/assets/ea069297-acb6-4ebc-8970-b45eacf0dd91" />
+
 
 The tests cover common SauceDemo user flows such as logging in, adding products to the cart, removing an item, adding multiple items, and completing checkout.
 
