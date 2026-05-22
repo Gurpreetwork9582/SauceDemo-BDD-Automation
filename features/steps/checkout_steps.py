@@ -18,6 +18,8 @@ def step_login_to_saucedemo(context):
         "secret_sauce"
     )
     context.browser.find_element(By.CSS_SELECTOR, "[data-test='login-button']").click()
+    
+    
 
     context.wait.until(EC.url_contains("inventory.html"))
 
@@ -31,15 +33,13 @@ def step_add_items_to_cart(context):
         EC.element_to_be_clickable((By.CSS_SELECTOR, Locators.ADD_TSHIRT))
     ).click()
     context.wait.until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, Locators.ADD_ONESIE))
-    ).click()
-    context.wait.until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, Locators.ADD_RED_TSHIRT))
     ).click()
 
     context.wait.until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, Locators.CART_ICON))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-test='shopping-cart-link']"))
     ).click()
+    
     context.wait.until(EC.url_contains("cart.html"))
     cart_items = context.wait.until(
         EC.presence_of_all_elements_located((By.CSS_SELECTOR, Locators.CART_ITEM))
