@@ -1,9 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
 import pytest
-from Config.Login_auth import login_auth
+from config.Login_auth import login_auth
 import os
-from Config.Logout_auth import logout_auth
+from config.Logout_auth import logout_auth
 
 
 @pytest.fixture(scope="session")
