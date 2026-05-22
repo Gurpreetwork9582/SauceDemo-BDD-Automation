@@ -86,6 +86,57 @@ python3 -m pip install -r requirements.txt
 
 Make sure Google Chrome is installed. Selenium Manager should handle ChromeDriver automatically for modern Selenium versions.
 
+## Docker
+
+This repository includes a `Dockerfile` and `compose.yaml` to build and run the test environment.
+
+Build the image:
+
+```bash
+docker build -t saucedemo-bdd .
+```
+
+Run the default Behave command inside the container:
+
+```bash
+docker run --rm saucedemo-bdd
+```
+
+If you want to keep the generated report on your host machine, mount the project directory:
+
+```bash
+docker run --rm -v "%cd%:/app" saucedemo-bdd
+```
+
+Run the Pytest suite inside the container instead of the default Behave command:
+
+```bash
+docker run --rm -v "%cd%:/app" saucedemo-bdd pytest -q --html=report.html
+```
+
+Use Docker Compose to build and run the container with the existing `compose.yaml` file:
+
+```bash
+docker compose up --build
+```
+
+> Note: The current Docker image is configured to run the Behave suite by default. If you need browser-based Selenium tests inside Docker, make sure the container has Chrome or Chromium installed.
+
+## GitHub Actions
+
+This project already includes a GitHub Actions workflow in `.github/workflows/python-app.yml`.
+
+The workflow runs on `push` and `pull_request` events for the `main` branch. It performs these steps:
+
+- checks out the repository
+- sets up Python 3.10
+- installs dependencies from `requirements.txt`
+- runs `flake8` for linting
+- runs the Behave BDD tests
+- runs the Pytest suite
+
+To trigger the workflow, push changes to `main` or open a pull request targeting `main`.
+
 ## Run Pytest + Selenium Tests
 
 To run the Pytest Selenium suite, use:
