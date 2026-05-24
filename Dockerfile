@@ -49,3 +49,6 @@ EXPOSE 8000
 
 # Run the application.
 CMD behave
+
+#install ACT to build and run the docker in terminal  for acting 
+#act -j build  
